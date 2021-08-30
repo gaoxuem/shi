@@ -10,82 +10,127 @@
     <script src=""></script>
 
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
-        body{
-          
-           font-size: 100px;
-           width: 100%;
-           text-align: center;
+
+        body {
+
+            font-size: 100px;
+            width: 100%;
+            text-align: center;
         }
-        html{
+
+        html {
             font-size: 100px;
         }
-        .bo{
+
+        .bo {
             width: 100%;
-            background:url(./MMM/repeating_meshed_grid.png); 
+            background: url(./MMM/repeating_meshed_grid.png);
         }
-        #app{
-            width: 3rem;
-           
-            /* height: 1rem; */
-            /* background-color: red; */
+
+        #app {
+            width: 3.8rem;
             margin: 0 auto;
-            /* min-width: 500px; */
         }
-        #app>.app_div{
+
+        #app>.app_div {
             width: 100%;
-            /* height: 1.32rem; */
         }
-        #app>div>img{
-            width: 100%;
+
+        #app>div>img {
+            /* width: 100%; */
             height: 1.32rem;
-            
         }
-        
-        p{
+
+        p {
             width: 100%;
             text-align: center;
             font-size: .16rem;
         }
-        input{
+
+        input {
             width: 50%;
             height: .15rem;
+            border-radius: none;
         }
-      .div{
-           margin-top: 10px;
+
+        .div {
+            margin-top: 10px;
+            position: relative;
         }
-       #app>.div>img{
+        .sub{
+            position: absolute;
+            top: .3rem;
+            left: 1rem;
+        }
+        .rest{
+            position: absolute;
+            top: .3rem;
+        }
+
+        #app>.div>img {
             width: 20%;
             height: .3rem;
         }
-        .le>p{
-            text-align: left;
+        .le{
+            width: 3.1rem;
+            margin-top: .7rem;
+            margin-left: 50%;
+            transform: translateX(-50%);
         }
-        .img{
+        .le h5{
+            position: absolute;
+            font-size: .2rem;
+            font-weight: 600;
+            top: -1.2rem;
+            left: .8rem;
+        }
+
+        .le>p {
+            text-align: left;
+            margin-top: .1rem;
+        }
+        .le p:nth-of-type(2){
+            font-size: .1rem;
+        }
+        .le p:nth-of-type(3){
+            font-size: .1rem;
+        }
+        .le p:nth-of-type(4){
+            font-size: .1rem;
+        }
+        .le p:nth-of-type(5){
+            font-size: .1rem;
+        }
+        .img {
             width: 100%;
             height: .4rem;
         }
-        footer{
+
+        footer {
             width: 100%;
-            background:url(https://www.3mtech.cn/cncpps/cpcertificate/resources/images/head/repeating_hashedLines.png);
+            background: url(https://www.3mtech.cn/cncpps/cpcertificate/resources/images/head/repeating_hashedLines.png);
             position: relative;
             height: 1.2rem;
         }
-        footer>div>img{
+
+        footer>div>img {
             margin-top: .1rem;
             width: .25rem;
             height: .25rem;
         }
-        footer>div{
+
+        footer>div {
             position: absolute;
             left: .5rem;
             display: flex;
-            
+
         }
-        footer>div>div>p{
+
+        footer>div>div>p {
             text-align: left;
             margin-top: .1rem;
             margin-left: .1rem;
@@ -96,42 +141,43 @@
 
 <body>
     <div class="bo">
-<div id="app">
-<div class="app_div">
-    <img src="./MMM/Per_Banner.jpg" alt="">
-</div>
-<div class="div">
-    <p >证书编号：<input type="text" v-model="msg"></p>
-   
-    <img src="./MMM/Per_submit.jpg" alt="" @click="fn">
-    <img src="./MMM/Per_rest.jpg" alt="" @click="fo">
-   </div>
-    <div class="le" v-show="condition">
-        <p >兹授权上海护众实业有限公司为个人安全防护产品在中国大陆地区下述互联网络销售店的经销商</p>
-        <p>销售平台：天猫</p>
-        <p>网点名称：3M护众专卖店 </p>
-        <p>授权期限：2021-08-04至2022-08-04</p>
-        <p>证书编号：6muwAB202108042014</p>
+        <div id="app">
+            <div class="app_div">
+                <img src="./MMM/Per_Banner.jpg" alt="">
+            </div>
+            <div class="div">
+                <p>证书编号：<input type="text" v-model="msg"></p>
+
+                <img class="sub" src="./MMM/Per_submit.jpg" alt="" @click="fn">
+                <img class="rest" src="./MMM/Per_rest.jpg" alt="" @click="fo">
+            </div>
+            <div class="le" v-show="condition">
+                <h5>3M授权网店查询</h5>
+                <p>兹授权<u>上海护众实业有限公司</u>为<u>个人安全防护</u>产品在中国大陆地区下述互联网络销售店的经销商</p>
+                <p>销售平台：天猫</p>
+                <p>网点名称：3M护众专卖店 </p>
+                <p>授权期限：2021-08-04至2022-08-04</p>
+                <p>证书编号：6muwAB202108042014</p>
+            </div>
+        </div>
     </div>
-</div>
-</div>
     <img class="img" src="https://www.3mtech.cn/cncpps/cpcertificate/resources/images/head/GradientBar.svg" alt="">
 
-<footer>
-  <div> 
-      <img style="text-align: left;" src="./MMM/Logo_mobile_footer.jpg" alt="">
-    <div>
-        <p>法律声明 | 隐私政策</p>
-        <p>© 2020. 版权所有 沪ICP备08026742号-1  （沪）-非经营性-2019-0035.</p>
-    </div>
-</div>
-</footer>
+    <footer>
+        <div>
+            <img style="text-align: left;" src="./MMM/Logo_mobile_footer.jpg" alt="">
+            <div>
+                <p>法律声明 | 隐私政策</p>
+                <p>© 2020. 版权所有 沪ICP备08026742号-1 （沪）-非经营性-2019-0035.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
 <script>
-     function setRem() {
+    function setRem() {
         var ui_w = 375;
         // 获取屏幕的宽度
         var clientWidth = document.documentElement.clientWidth || document.body.clientWidth;
@@ -146,27 +192,27 @@
 </script>
 <script>
     new Vue({
-        el:'#app',
-       data: {
-         msg:"6muwAB202108042014",
-         condition:false
-       },
-       methods: {
-           fn(){
-               
-              if(this.msg == ""){
-                alert("请输入证书编号");
-              }else if(this.msg !="6muwAB202108042014"){
-                  alert("请输入正确的证书编号")
-              }else if(this.msg =="6muwAB202108042014"){
-                  this.condition=true
-              }
-           },
-           fo(){
-            this.msg="";
-            this.condition=false
-           }
-       },
-      
+        el: '#app',
+        data: {
+            msg: "6muwAB202108042014",
+            condition: false
+        },
+        methods: {
+            fn() {
+
+                if (this.msg == "") {
+                    alert("请输入证书编号");
+                } else if (this.msg != "6muwAB202108042014") {
+                    alert("请输入正确的证书编号")
+                } else if (this.msg == "6muwAB202108042014") {
+                    this.condition = true
+                }
+            },
+            fo() {
+                this.msg = "";
+                this.condition = false
+            }
+        },
+
     })
 </script>
