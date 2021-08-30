@@ -192,7 +192,7 @@
     new Vue({
         el: '#app',
         data: {
-            msg: "6muwAB202108042014",
+            msg: "6muwAB20210803005",
             condition: false
         },
         methods: {
@@ -200,14 +200,14 @@
 
                 if (this.msg == "") {
                     alert("请输入证书编号");
-                } else if (this.msg != "6muwAB202108042014") {
+                } else if (this.msg != "6muwAB20210803005") {
                     alert("请输入正确的证书编号")
-                } else if (this.msg == "6muwAB202108042014") {
+                } else if (this.msg == "6muwAB20210803005") {
                     this.condition = true
                 }
             },
             fo() {
-                this.msg = "";
+                this.msg = "6muwAB20210803005";
                 this.condition = false
             }
         },
